@@ -1,0 +1,8 @@
+<tr>
+  <td><%= product.name %></td>
+  <td><%= product.category.name %></td>
+  <td><% if product.stock > 0 %>&#9745;<% end %></td>
+  <td>
+    <%= link_to "Show", product, class: "btn btn-primary btn-sm" %>
+  </td>
+</tr>

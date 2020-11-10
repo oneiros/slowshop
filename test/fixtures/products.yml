@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyText
+  category: one
+  metadata: MyText
+  ean: MyString
+  product_code: MyString
+  stock: 1
+  available_from: 2020-11-03 15:24:39
+  comment: MyText
+
+two:
+  name: MyString
+  description: MyText
+  category: two
+  metadata: MyText
+  ean: MyString
+  product_code: MyString
+  stock: 1
+  available_from: 2020-11-03 15:24:39
+  comment: MyText

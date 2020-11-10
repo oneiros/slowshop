@@ -1,0 +1,26 @@
+<h1><%= @category.name %></h1>
+
+<ul class="nav nav-pills my-4">
+  <li class="nav-item">
+    <%= link_to "All", url_for(in_stock: nil), class: "nav-link #{"active" unless params[:in_stock]}" %>
+  </li>
+  <li class="nav-item">
+    <%= link_to "In Stock", url_for(in_stock: 1), class: "nav-link #{"active" if params[:in_stock]}" %>
+  </li>
+</ul>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Category</th>
+      <th>Available?</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @products.each do |product| %>
+      <%= render "products/product", product: product %>
+    <% end %>
+  </tbody>
+</table>

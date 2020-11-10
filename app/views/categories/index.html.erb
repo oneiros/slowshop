@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="col">
+    <%= cache do %>
+    <h1>Categories</h1>
+  <% end %>
+  </div>
+</div>
+
+<% @categories.each do |category| %>
+  <div class="row">
+    <div class="col">
+      <h2><%= category.name %></h2>
+      <h3>Latest Products:</h3>
+      <div class="card-deck">
+        <% category.products.sort_by(&:created_at).reverse.take(5).each do |product| %>
+          <div class="card">
+            <%= image_tag product.image.variant(resize: "196x196>"), class: "card-image-top" %>
+            <div class="card-body">
+              <h5 class="card-title"><%= product.name %></h5>
+              <p class="card-text"><%= truncate(product.description) %></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col text-right">
+      <%= link_to "See all #{category.products.count} products >>", category, class: "btn btn-primary mt-2" %>
+    </div>
+  </div>
+
+<% end %>
