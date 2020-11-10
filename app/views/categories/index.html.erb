@@ -14,7 +14,9 @@
       <div class="card-deck">
         <% category.products.sort_by(&:created_at).reverse.take(5).each do |product| %>
           <div class="card">
-            <%= image_tag product.image.variant(resize: "196x196>"), class: "card-image-top" %>
+            <% if product.image.attached? %>
+              <%= image_tag product.image.variant(resize: "196x196>"), class: "card-image-top" %>
+            <% end %>
             <div class="card-body">
               <h5 class="card-title"><%= product.name %></h5>
               <p class="card-text"><%= truncate(product.description) %></p>
