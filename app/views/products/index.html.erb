@@ -10,9 +10,7 @@
     </tr>
   </thead>
   <tbody>
-    <% @products.each do |product| %>
-      <%= render "product", product: product %>
-    <% end %>
+    <%= render @products %>
   </tbody>
 </table>
 

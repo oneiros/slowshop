@@ -1,6 +1,7 @@
 class CategoriesController < ApplicationController
   def index
-    @categories = Category.all
+    @categories = Category
+      .includes(latest_products: {image_attachment: :blob}).all
   end
 
   def show
@@ -12,10 +13,6 @@ class CategoriesController < ApplicationController
   private
 
   def in_stock
-    result = []
-    @products.each do |product|
-      result << product if product.stock > 0
-    end
-    result
+    @products.where("products.stock > 0")
   end
 end

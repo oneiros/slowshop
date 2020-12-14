@@ -35,11 +35,19 @@ gem 'bootstrap', '~> 4.5.2'
 gem 'faker'
 gem 'ruby_identicon'
 
+group :profile do
+  gem 'ruby-prof'
+end
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'active_storage_silent_logs'
+  gem 'rack-mini-profiler'
+  gem 'flamegraph'
+  gem 'stackprof'
+  gem 'bullet'
 end
 
 group :development do
