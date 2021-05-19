@@ -19,8 +19,6 @@
     </tr>
   </thead>
   <tbody>
-    <% @products.each do |product| %>
-      <%= render "products/product", product: product %>
-    <% end %>
+    <%= render @category.products %>
   </tbody>
 </table>
